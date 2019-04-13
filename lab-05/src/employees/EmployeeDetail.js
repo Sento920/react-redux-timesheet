@@ -61,7 +61,7 @@ export class EmployeeDetail extends React.Component {
       <div>
         <h1>Employee Detail</h1>
         <EmployeeForm
-          employee={this.props.employee}
+          employee={this.state.employee}
           handleSave={this.handleSave}
         />
       </div>
