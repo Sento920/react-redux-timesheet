@@ -2,9 +2,39 @@ import React from 'react';
 import ProjectTable from './ProjectTable';
 
 class Projects extends React.Component {
+  // Implement Statefulness
+
+  //Note that this information is referenced in both child components.
+  //The id gets iterated upon to give us multiple rows, and the name + desc is self explanatory for the row itself.
+
+  state ={
+    projects: [
+      {
+        _id: 1,
+        name: 'Project1',
+        description: 'This is your first project'
+      },
+      {
+        _id: 2,
+        name: 'Project2',
+        description: 'This is your second project'
+      },
+      {
+        _id: 3,
+        name: 'Project3',
+        description: 'This is the third project'
+      }
+    ]
+  };
+
   render() {
-    // TODO Implement
-    return null;
+    const { projects } = this.state;
+    return (
+      <div>
+        <h1>Projects</h1>
+        <ProjectTable projects={projects} />
+      </div>
+    );
   }
 }
 
